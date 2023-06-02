@@ -2,7 +2,7 @@
 
 This is the code for the CVPR 2023 paper [Skinned Motion Retargeting with Residual Perception of Motion Semantics & Geometry](https://openaccess.thecvf.com/content/CVPR2023/html/Zhang_Skinned_Motion_Retargeting_With_Residual_Perception_of_Motion_Semantics__CVPR_2023_paper.html) by Jiaxu Zhang, et al.
 
-R2ET is a neural motion retargeting model that can preserve source motion semantics and avoid interpenetration in target motion.
+R2ET is a neural **motion retargeting** model that can preserve the source motion semantics and avoid interpenetration in the target motion.
 
 ![](https://github.com/Kebii/R2ET/blob/master/gifs/demo1.gif)
 
@@ -87,3 +87,6 @@ blender -P visualize.py
   year      = {2023}
   }
 ```
+
+## Acknowledgments
+Thanks to [PMnet](https://github.com/ljin0429/bmvc19_pmnet), [SAN](https://github.com/DeepMotionEditing/deep-motion-editing) and [NKN](https://github.com/rubenvillegas/cvpr2018nkn), our code is partially borrowing from them.
