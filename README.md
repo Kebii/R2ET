@@ -72,6 +72,7 @@ python3 train_shape_aware.py --config ./config/train_shape_aware.yaml
 ```
 
 ## Visualization
+The visualization parameters are in the visualization\options.py
 ```
 cd ./visualization
 blender -P visualize.py
