@@ -71,7 +71,7 @@ python3 train_skeleton_aware.py --config ./config/train_skeleton_aware.yaml
 python3 train_shape_aware.py --config ./config/train_shape_aware.yaml
 ```
 
-## visualization
+## Visualization
 ```
 cd ./visualization
 blender -P visualize.py
