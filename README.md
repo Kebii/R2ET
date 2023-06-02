@@ -31,9 +31,10 @@ conda install pytorch==1.10.0 torchvision==0.11.0 torchaudio==0.10.0 cudatoolkit
 
 ### 4. Data preparation
 **Training data:**  
-* Firstly, create an account in the [Mixamo](https://www.mixamo.com) website.
+* Firstly, create an account on the [Mixamo](https://www.mixamo.com) website.
 * Next, download the fbx animation files for each character folder in ./datasets/mixamo/train_char/. The animation list can be refered to [NKN](https://github.com/rubenvillegas/cvpr2018nkn). we collect 1952 non-overlapping motion sequences for training.
-Once the fbx files have been downloaded, run the following ***blender script*** to convert them into BVH files:
+
+* Once the fbx files have been downloaded, run the following ***blender script*** to convert them into BVH files:
 ```
 blender -b -P ./datasets/fbx2bvh.py
 ```
