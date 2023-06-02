@@ -1,0 +1,40 @@
+work_dir: ./work_dir/train_shapeaware
+mesh_path: ./datasets/mixamo/train_shape/
+phase: train
+alpha: 100.0
+mu: 10.0
+kappa: 0.5
+tao: 0.005
+theta: 0.0
+kp: 0.8
+margin: 0.3
+lam: 2.0         # balancing
+euler_ord: yzx
+max_length: 60
+num_joint: 22
+
+train_feeder_args:
+  data_path: ./datasets/mixamo/train_q
+  stats_path: ./datasets/mixamo/stats
+  shape_path: ./datasets/mixamo/train_shape
+  max_length: 60
+
+ret_model_args:
+  num_joint: 22
+  token_channels: 64
+  hidden_channels_p: 256 
+  embed_channels_p: 128
+  kp: 0.8
+
+dis_model_args:
+  kp: 0.8
+
+epoch: 50
+device: [0]
+step: [30]
+base_lr: 0.001
+batch_size: 16
+weight_decay: 0.0
+ret_weights: ./pretrain/skeleton_aware_pre.pt
+dis_weights: ./pretrain/discriminator_pre.pt
+ignore_weights: []

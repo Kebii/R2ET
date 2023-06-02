@@ -1,0 +1,19 @@
+phase: test
+num_joint: 22
+weights: ./pretrain/shape_aware.pt
+device: [0]
+save_path: ./save/inference/
+
+load_inp_data:
+  inp_shape_path: ./datasets/mixamo/test_shape/Ortiz.npz
+  tgt_shape_path: ./datasets/mixamo/test_shape/Sporty_Granny.npz
+  stats_path: ./datasets/mixamo/stats
+  inp_bvh_path: ./datasets/mixamo/demo/Ortiz/Gangnam Style.bvh
+  tgt_bvh_path: ./datasets/mixamo/demo/Sporty_Granny/Gangnam Style.bvh
+
+ret_model_args:
+  num_joint: 22
+  token_channels: 64
+  hidden_channels_p: 256
+  embed_channels_p: 128
+  kp: 1.0
