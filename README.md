@@ -32,18 +32,18 @@ conda install pytorch==1.10.0 torchvision==0.11.0 torchaudio==0.10.0 cudatoolkit
 
 ### 4. Data preparation
 **Train data:**  
-Firstly, create an account in the [Mixamo](https://www.mixamo.com) website.
-Next, download the fbx animation files for each character folder in ./datasets/mixamo/train_char/. The animation list can be refered to [NKN](https://github.com/rubenvillegas/cvpr2018nkn). we collect 1952 non-overlapping motion sequences for training.
+* Firstly, create an account in the [Mixamo](https://www.mixamo.com) website.
+* Next, download the fbx animation files for each character folder in ./datasets/mixamo/train_char/. The animation list can be refered to [NKN](https://github.com/rubenvillegas/cvpr2018nkn). we collect 1952 non-overlapping motion sequences for training.
 Once the fbx files have been downloaded, run the following ***blender script*** to convert them into BVH files:
 ```
 blender -b -P ./datasets/fbx2bvh.py
 ```
-Finally, preprocess the bvh files into npy files by running the following command:
+* Finally, preprocess the bvh files into npy files by running the following command:
 ```
 python ./datasets/preprocess_q.py
 ```
 
-The shape information saved in ./datasets/mixamo/train_shape (already preprocessed) for each character's T-pose is preprocessed by:
+* The shape information saved in ./datasets/mixamo/train_shape (already preprocessed) for each character's T-pose is preprocessed by:
 ```
 blender -b -P ./datasets/extract_shape.py
 ```
@@ -78,7 +78,7 @@ blender -P visualize.py
 ```
 
 ## Citation                                                                                                                                                  
-If you find this useful, please cite our work as follows:                        
+* If you find this useful, please cite our work as follows:                        
 ```                                                                              
 @inproceedings{zhang2023skinned,
   title     = {Skinned Motion Retargeting with Residual Perception of Motion Semantics & Geometry},
