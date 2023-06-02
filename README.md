@@ -80,12 +80,12 @@ blender -P visualize.py
 * If you find this useful, please cite our work as follows:                        
 ```                                                                              
 @inproceedings{zhang2023skinned,
-  title     = {Skinned Motion Retargeting with Residual Perception of Motion Semantics & Geometry},
-  author    = {Jiaxu Zhang, Junwu Weng, Di Kang, Fang Zhao, Shaoli Huang, Xuefei Zhe, Linchao Bao, Ying Shan, Jue Wang, Zhigang Tu.},
-  booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
-  month     = {June},
-  year      = {2023}
-  }
+  title={Skinned Motion Retargeting with Residual Perception of Motion Semantics \& Geometry},
+  author={Zhang, Jiaxu and Weng, Junwu and Kang, Di and Zhao, Fang and Huang, Shaoli and Zhe, Xuefei and Bao, Linchao and Shan, Ying and Wang, Jue and Tu, Zhigang},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  pages={13864--13872},
+  year={2023}
+}
 ```
 
 ## Acknowledgments
