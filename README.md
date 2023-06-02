@@ -77,7 +77,7 @@ blender -P visualize.py
 ```
 
 ## Citation                                                                                                                                                  
-* If you find this useful, please cite our work as follows:                        
+* If you find this work helpful, please consider citing it as follows:                    
 ```                                                                              
 @inproceedings{zhang2023skinned,
   title={Skinned Motion Retargeting with Residual Perception of Motion Semantics \& Geometry},
