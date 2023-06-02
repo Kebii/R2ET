@@ -4,7 +4,7 @@ This is the code for the CVPR 2023 paper [Skinned Motion Retargeting with Residu
 
 R2ET is a neural motion retargeting model that can preserve source motion semantics and avoid interpenetration in target motion.
 
-![](https://github.com/Kebii/R2ET/gifs/demo1.gif)
+![](https://github.com/Kebii/R2ET/blob/master/gifs/demo1.gif)
 
 
 ## Quick Start
