@@ -47,14 +47,14 @@ python ./datasets/preprocess_q.py
 blender -b -P ./datasets/extract_shape.py
 ```
 
-### 5. Install CUDA implementation of SDF function:
+### 5. Install the CUDA implementation of SDF function:
 ```
 cd ./outside-code/sdf
 python setup.py install
 ```
 
 ## Inference
-**R2ET:**
+**Performing inference using bvh files:**
 ```
 python3 inference_bvh.py --config ./config/inference_bvh_cfg.yaml
 ```
