@@ -15,23 +15,22 @@ conda activate r2et
 ```
 
 ### 2. Install dependencies (Anaconda installation is recommended)
-Install the packages in `requirements.txt` and install [PyTorch 1.10.0](https://pytorch.org/)
+* Install the packages in `requirements.txt` and install [PyTorch 1.10.0](https://pytorch.org/)
 ```
 pip install -r requirements.txt
 ```
 
-Install pytorch
+* Install pytorch
 ```
 conda install pytorch==1.10.0 torchvision==0.11.0 torchaudio==0.10.0 cudatoolkit=10.2 -c pytorch
 ```
 
 ### 3. Download and Install Blender
-**Download and install from:**  
-* https://www.blender.org/download/
+* Download and install from: https://www.blender.org/download/
 
 
 ### 4. Data preparation
-**Train data:**  
+**Training data:**  
 * Firstly, create an account in the [Mixamo](https://www.mixamo.com) website.
 * Next, download the fbx animation files for each character folder in ./datasets/mixamo/train_char/. The animation list can be refered to [NKN](https://github.com/rubenvillegas/cvpr2018nkn). we collect 1952 non-overlapping motion sequences for training.
 Once the fbx files have been downloaded, run the following ***blender script*** to convert them into BVH files:
@@ -55,7 +54,7 @@ python setup.py install
 ```
 
 ## Inference
-**NKN Autoencoder:**
+**R2ET:**
 ```
 python3 inference_bvh.py --config ./config/inference_bvh_cfg.yaml
 ```
