@@ -393,6 +393,7 @@ class RetNet(nn.Module):
         quat_mean,
         quat_std,
         parents,
+        k=-1,
     ):
         '''
         seqA, seqB: bs T joints*3+4
@@ -428,7 +429,8 @@ class RetNet(nn.Module):
         delta_qg = []
 
         # manully adjust k for balacing gate
-        k = 1.0
+        if k == -1:
+            k = 1.0
         leftArm_joints = [14, 15, 16]
         rightArm_joints = [18, 19, 20]
         leftLeg_joints = [6, 7]

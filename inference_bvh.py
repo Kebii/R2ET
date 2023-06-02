@@ -465,6 +465,7 @@ def inference(ret_model, parents, arg):
         quat_mean,
         quat_std,
         parents,
+        arg.k,
     )
 
     localB = oursL.clone()
