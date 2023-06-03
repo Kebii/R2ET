@@ -273,8 +273,8 @@ def train(
 
         base_loss = local_ae_loss + quat_ae_loss + arg.mu * twist_loss
 
-        local_std_ts = torch.from_numpy(local_std).cuda(t_poseB.device)
-        local_mean_ts = torch.from_numpy(local_mean).cuda(t_poseB.device)
+        local_std_ts = torch.from_numpy(local_std).cuda(skelB.device)
+        local_mean_ts = torch.from_numpy(local_mean).cuda(skelB.device)
 
         bs = quatB_rt.shape[0]
         t_poseB = torch.reshape(skelB[:, 0, :], [bs, num_joint, 3])
