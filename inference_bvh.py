@@ -56,6 +56,9 @@ def get_parser():
         default=dict(),
         help='the arguments of retargetor',
     )
+    parser.add_argument(
+        '--k', type=float, default=0.8, help='adjustable k for balacing gate'
+    )
 
     return parser
 
