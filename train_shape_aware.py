@@ -221,6 +221,8 @@ def train(
     global_std,
     local_mean,
     local_std,
+    quat_mean,
+    quat_std,
     parents,
     mesh_file_dic,
     all_names,
@@ -300,6 +302,8 @@ def train(
             heightB,
             local_mean,
             local_std,
+            quat_mean,
+            quat_std,
             parents,
         )
 
@@ -579,6 +583,8 @@ def main(arg):
             data_feeder.global_std,
             data_feeder.local_mean,
             data_feeder.local_std,
+            data_feeder.quat_mean,
+            data_feeder.quat_std,
             data_feeder.parents,
             mesh_file_dic,
             data_feeder.all_names,
