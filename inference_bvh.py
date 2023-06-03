@@ -222,7 +222,7 @@ def get_inp_from_bvh(bvh_path):
         tgtanim = anim.copy()
         tgtanim.positions[:, 0, :] = new_joints[:, :3]
         poseR = Animation.positions_global(tgtanim)
-        data_quat = angle
+        data_quat = angle.copy()
         data_seq = new_joints
 
         anim.rotations.qs[...] = anim.orients.qs[None]

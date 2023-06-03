@@ -262,7 +262,7 @@ class DeltaShapeDecoder(nn.Module):
 
         self.num_joint = num_joint
 
-        self.joint_linear1 = nn.Linear(7 * 22, hidden_channels)
+        self.joint_linear1 = nn.Linear(10 * 22, hidden_channels)
         self.joint_acti1 = nn.ReLU()
         self.joint_drop1 = nn.Dropout(p=1 - kp)
         self.joint_linear2 = nn.Linear(hidden_channels, hidden_channels)
@@ -271,9 +271,9 @@ class DeltaShapeDecoder(nn.Module):
 
         self.delta_linear = qlinear(hidden_channels, 4 * num_joint)
 
-    def forward(self, shapeB, x):
+    def forward(self, shapeA, shapeB, x):
         bs = shapeB.shape[0]
-        x_cat = torch.cat([shapeB, x], dim=-1)
+        x_cat = torch.cat([shapeA, shapeB, x], dim=-1)
         x_cat = x_cat.view((bs, -1))
 
         x_embed = self.joint_drop1(self.joint_acti1(self.joint_linear1(x_cat)))
@@ -454,7 +454,7 @@ class RetNet(nn.Module):
             qB_base_norm = (qB_base - quat_mean) / quat_std
 
             # delta qg
-            delta2_leftArm = self.delta_leftArm_dec(shapeB, qB_base_norm)
+            delta2_leftArm = self.delta_leftArm_dec(shapeA, shapeB, qB_base_norm)
             delta2_leftArm = torch.reshape(delta2_leftArm, [bs, 3, 4])
             delta2_leftArm = (
                 delta2_leftArm * quat_std[:, leftArm_joints, :]
@@ -462,7 +462,7 @@ class RetNet(nn.Module):
             )
             delta2_leftArm = normalized(delta2_leftArm)
 
-            delta2_rightArm = self.delta_rightArm_dec(shapeB, qB_base_norm)
+            delta2_rightArm = self.delta_rightArm_dec(shapeA, shapeB, qB_base_norm)
             delta2_rightArm = torch.reshape(delta2_rightArm, [bs, 3, 4])
             delta2_rightArm = (
                 delta2_rightArm * quat_std[:, rightArm_joints, :]
@@ -470,7 +470,7 @@ class RetNet(nn.Module):
             )
             delta2_rightArm = normalized(delta2_rightArm)
 
-            delta2_leftLeg = self.delta_leftLeg_dec(shapeB, qB_base_norm)
+            delta2_leftLeg = self.delta_leftLeg_dec(shapeA, shapeB, qB_base_norm)
             delta2_leftLeg = torch.reshape(delta2_leftLeg, [bs, 2, 4])
             delta2_leftLeg = (
                 delta2_leftLeg * quat_std[:, leftLeg_joints, :]
@@ -478,7 +478,7 @@ class RetNet(nn.Module):
             )
             delta2_leftLeg = normalized(delta2_leftLeg)
 
-            delta2_rightLeg = self.delta_rightLeg_dec(shapeB, qB_base_norm)
+            delta2_rightLeg = self.delta_rightLeg_dec(shapeA, shapeB, qB_base_norm)
             delta2_rightLeg = torch.reshape(delta2_rightLeg, [bs, 2, 4])
             delta2_rightLeg = (
                 delta2_rightLeg * quat_std[:, rightLeg_joints, :]

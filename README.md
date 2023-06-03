@@ -49,7 +49,7 @@ blender -b -P ./datasets/extract_shape.py
 ```
 
 ### 5. Install the CUDA implementation of SDF function
-* This CUDA implementation requires CUDA 10.2 in the environment
+* This CUDA implementation requires CUDA 10.2+ in the environment
 ```
 cd ./outside-code/sdf
 python setup.py install
