@@ -5,7 +5,6 @@ alpha: 100.0
 mu: 10.0
 kappa: 0.5
 tao: 0.005
-theta: 0.0
 kp: 0.8
 margin: 0.3
 lam: 2.0         # balancing
