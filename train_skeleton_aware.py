@@ -56,6 +56,9 @@ def get_parser():
     )
     parser.add_argument('--batch-size', type=int, default=16, help='batch size')
     parser.add_argument(
+        '--alpha', type=float, default=100.0, help='threshold for euler angle'
+    )
+    parser.add_argument(
         '--nu', type=float, default=100.0, help='threshold for euler angle'
     )
     parser.add_argument(
