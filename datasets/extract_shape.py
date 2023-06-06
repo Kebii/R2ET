@@ -146,7 +146,7 @@ def extract_data(fbx_path, subject_name, save_path):
     for i in range(vertex_part.shape[0]):
         if vertex_part[i] in body_joint_lst:
             body_vid_lst.append(i)
-        if vertex_part[i] in right_arm_joint_lst:
+        if vertex_part[i] in arms_joint_lst:
             arm_vid_lst.append(i)
 
     rest_body_vertices = np_rest_verts[body_vid_lst, :]
