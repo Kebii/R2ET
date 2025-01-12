@@ -8,7 +8,7 @@ R2ET is a neural **motion retargeting** model that can preserve the source motio
 
 
 ## Updates
-* **2025-1-12**: We are very sorry that the code was not well-organized in the previous version and the results showed jitter. We have fixed the jitter issue in the latest version. Our apologies once more for the misunderstanding and inconvenience caused.
+* **2025-1-12**: We are very sorry that the code was not well-organized in the previous version and the results showed jitter. We have fixed the jitter bug in the latest version. Our apologies once more for the misunderstanding and inconvenience caused.
 
 
 ## Quick Start
