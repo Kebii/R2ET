@@ -394,6 +394,7 @@ class RetNet(nn.Module):
         quat_std,
         parents,
         k=-1,
+        phase="train",
     ):
         '''
         seqA, seqB: bs T joints*3+4
@@ -503,11 +504,14 @@ class RetNet(nn.Module):
 
             qB_hat = q_mul_q(qB_base, delta2)
 
-            one_w = np.random.binomial(1, p=0.4)
-            if one_w:
-                bala_gate = torch.ones(bala_gate.shape, dtype=torch.float32).cuda(
-                    seqA.device
-                )
+
+            # the one_w is used in the training phase
+            if phase=="train":
+                one_w = np.random.binomial(1, p=0.4)
+                if one_w:
+                    bala_gate = torch.ones(bala_gate.shape, dtype=torch.float32).cuda(
+                        seqA.device
+                    )
 
             qB_t = torch.lerp(qB_base, qB_hat, bala_gate[:, :, None] * k)
 

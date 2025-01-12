@@ -469,6 +469,7 @@ def inference(ret_model, parents, arg):
         quat_std,
         parents,
         arg.k,
+        arg.phase,
     )
 
     localB = oursL.clone()
